@@ -12,15 +12,12 @@ def opening():
 
   """)
 def read_template(template): 
-  with open(template, 'r') as file:
+  with open(template, 'rb') as file:
     print(file.strip())
 
+opening()
+read_template('assets/dark_and_stormy_night_template.txt')
 
-if __name__ == "__main__":
-  opening()
-  read_template()
-  adjective_question = ''
-  first_name_question = ''
 
 
 
