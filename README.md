@@ -25,13 +25,13 @@ Finish time: 11:58
 
 Actual time needed to complete: 28min
 
-Name of feature: test setup 
+Name of feature: Setup tests up until merge
 
 Estimate of time needed to complete: 1hr
 
 Start time: 1:09
 
-Finish time: 2:45 
+Finish time: 5:57
 
 Actual time needed to complete: 28min
 
