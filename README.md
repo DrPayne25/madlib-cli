@@ -50,4 +50,4 @@ Actual time needed to complete: 22min
 
 ## Credit and Collaborations
 Worked with Connor and brandon and Eddie, Isaiah for testing and discussion
-Help was acquired from these articles to get a better understanding https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/, https://www.youtube.com/watch?v=A3VQmxoWLHY, https://realpython.com/fibonacci-sequence-python/
+Help was acquired from these articles to get a better understanding https://stackoverflow.com/questions/63655115/indexerror-replacement-index-1-out-of-range-for-positional-args-tuple, https://realpython.com/python-kwargs-and-args/#unpacking-with-the-asterisk-operators, https://www.w3schools.com/python/ref_string_format.asp, https://stackoverflow.com/questions/2210755/regex-for-matching-all-words-between-a-set-of-curly-braces
