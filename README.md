@@ -25,13 +25,13 @@ Finish time: 11:58
 
 Actual time needed to complete: 28min
 
-Name of feature: planning
+Name of feature: test setup 
 
 Estimate of time needed to complete: 1hr
 
 Start time: 1:09
 
-Finish time: 
+Finish time: 2:45 
 
 Actual time needed to complete: 28min
 
