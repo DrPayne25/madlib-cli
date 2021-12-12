@@ -35,9 +35,19 @@ Finish time: 5:57
 
 Actual time needed to complete: 28min
 
+Name of feature: Merge and Docstring
+
+Estimate of time needed to complete: 30min
+
+Start time: 5:57
+
+Finish time: 6:19
+
+Actual time needed to complete: 22min 
+
 
 
 
 ## Credit and Collaborations
-Worked with Connor and brandon and Eddie for testing and discussion
+Worked with Connor and brandon and Eddie, Isaiah for testing and discussion
 Help was acquired from these articles to get a better understanding https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/, https://www.youtube.com/watch?v=A3VQmxoWLHY, https://realpython.com/fibonacci-sequence-python/
