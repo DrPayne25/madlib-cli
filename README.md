@@ -2,7 +2,7 @@
 
 **Author**: Alex Payne
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
-**PR**: https://github.com/DrPayne25/math-series/pull/1
+**PR**: https://github.com/DrPayne25/madlib-cli/pull/1
 
 ## Overview
   

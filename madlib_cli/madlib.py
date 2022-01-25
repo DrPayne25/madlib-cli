@@ -1,33 +1,46 @@
-import re
+
+from sys import exit
+import re, os
+
+file= "assets/make_me_a_video_game_template.txt"
 
 def opening():
   print("""
   **************************************
   ** Welcome to the Madlib Experience!**
-  **    Please see our rues below.    **
+  **    Please see our rules below.    **
   **
   ** To quit at any time, type "quit" **
   **************************************
   
-  
-  I the {Adjective} and {Adjective} {A First Name} have {Past Tense Verb}{A First Name}'s {Adjective} sister and plan to steal her {Adjective} {Plural Noun}!
-
+  ***************************************
+                  Rules
+     1. The game will ask you for an 
+        adjective, noun, name, etc.
+     2. The game will then take your 
+          answers and use them to
+              finish a story.
+          Good luck and have fun! 
+  ***************************************
+  **********  MadLib Example  **********
+    It was a (adjective: <dark>) and 
+        (adjective: <stormy>) 
+            (noun:<night>).
+    It was a dark and stormy night.
+  ***************************************
   """)
+
+def word_list(arr):
+    word_array = [] 
+    for i in arr:
+        response = input(f'Please enter a {i}:')
+        word_array.append(response)
+    return word_array 
+
 def read_template(template): 
-  '''
-  This is the read_template function 
-  it will take a .txt file as a input
-  with that file it will try to read the file contents then strip any spaces at the start and end of the string then return that new file
-  read_template('bTest test test "\" n') = Test test test
-  '''
-  try:
-    with open(template, 'r') as file:
-      stripped = file.read().strip()
-      return stripped
-  except FileNotFoundError:
-    raise FileNotFoundError('File cannot be found')
-  except Exception as e:
-    return 'There is a problem : '+ e
+    with open(template, 'r') as read_file: 
+            read_text = read_file.read()
+            return read_text 
 
 def parse_template(template):
   '''
@@ -38,10 +51,10 @@ def parse_template(template):
   it will then convert that new list into a tuple
   it will then return the tuple formated and the words seperated
   parse_template("It was a {Adjective} and {Adjective} {Noun}.") = 'It was a {} and {} {}' and ('dark', 'stormy', 'night')''' 
-  expected_stripped = template.format(Adjective = {}, Noun = {}) 
-  expected_parts_list = re.findall(r'{([^}]*)}', template)
-  expected_parts = tuple(expected_parts_list)
-  return expected_stripped, expected_parts
+  expected_stripped = r"{([\w ',.-]+)}"
+  expected_parts_list = tuple(re.findall(expected_stripped, template))
+  expected_parts = re.sub(expected_stripped, '{}', template)
+  return expected_parts, expected_parts_list
 
 def merge(string, words):
   '''
@@ -51,17 +64,18 @@ def merge(string, words):
   then it will return that newly formed string
   merge("It was a {} and {} {}.", ("dark", "stormy", "night") = 'It was a dark and story night'
   '''
-  new_string = string.format(*words)
-  return new_string
+  return string.format(*words)
 
-# print(read_template('../assets/dark_and_stormy_night_template.txt'))
-# print(read_template('../assets/make_me_a_video_game_template.txt'))
-# print(parse_template("It was a {Adjective} and {Adjective} {Noun}."))
-# print(merge("It was a {} and {} {}.", ("dark", "stormy", "night")))
+def save_file(mad_lib):
+  with open("../mad_lib/mad_lib_text.txt", 'w')as written_file:
+    text = written_file.write(mad_lib)
 
-
-
-
-
-
-
+if __name__ == "__main__":
+  opening()
+  template = read_template(file)
+  expected_parts, expected_parts_list = parse_template(template)
+  word_text = word_list(expected_parts_list)
+  mad_lib = merge(expected_parts,word_text)
+  save_file(mad_lib)
+  print(mad_lib)
+  print('Finished your Madlib!')
